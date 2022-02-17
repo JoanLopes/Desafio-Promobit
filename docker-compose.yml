@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  database:
+    build: .
+    image: 'mysql:5.7'
+    container_name: mysql-promobit
+    environment:
+        MYSQL_DATABASE: 'db-promobit'
+        MYSQL_USER: 'promobit'
+        MYSQL_PASSWORD: '123456'
+        MYSQL_ROOT_PASSWORD: 'promo4323'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - './.mysql-data/db:/var/lib/mysql'

@@ -14,12 +14,6 @@ use Sonata\AdminBundle\Show\ShowMapper;
 final class TagAdmin extends AbstractAdmin
 {
 
-    protected function configureRoutes(RouteCollectionInterface $collection): void
-    {
-        // Removing the export route will disable exporting entities.
-        $collection->remove('export');
-    }
-
     protected function configureDatagridFilters(DatagridMapper $filter): void
     {
         $filter
@@ -33,6 +27,7 @@ final class TagAdmin extends AbstractAdmin
         $list
             ->add('id')
             ->add('name')
+
             ->add(ListMapper::NAME_ACTIONS, null, [
                 'actions' => [
                     'show' => [],
@@ -57,4 +52,8 @@ final class TagAdmin extends AbstractAdmin
             ;
     }
 
+    protected function configureExportFields(): array
+    {
+        return ['name', 'products'];
+    }
 }

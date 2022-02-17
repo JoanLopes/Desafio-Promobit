@@ -12,3 +12,20 @@
 - execute: `composer install`
 - forçar atualização da base: ` bin/console doctrine:schema:update --force`
 - rodar o projeto: `bin/console server:run` 
+
+# login
+- se não tiver registro se cadaste no canto superior a direita:
+![Screenshot](tela03.png)
+
+# registro
+![Screenshot](tela02.png)
+
+# Admin
+- CRUD Product
+- CRUD Tag
+- clicando em dowload na listagem de Tag, e retornado o relatorio
+![Screenshot](tela01.png)
+
+
+# SQL
+- já que era permitido usar frameworks, foi usado export do sonataAdmin não sendo necessario sql puro.

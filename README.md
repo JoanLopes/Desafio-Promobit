@@ -13,6 +13,18 @@
 - forçar atualização da base: ` bin/console doctrine:schema:update --force`
 - rodar o projeto: `bin/console server:run` 
 
+# SQL
+```
+
+SELECT  t.name as 'tag name', GROUP_CONCAT(p.name SEPARATOR',' ) 'product list'
+FROM tag as t
+LEFT JOIN product_tag pt 
+	ON t.id  = pt.tag_id 
+LEFT JOIN product p 
+	ON p.id = pt.product_id 
+GROUP BY t.id  
+ 
+```
 # login
 - se não tiver registro se cadaste no canto superior a direita:
 ![Screenshot](tela03.png)
@@ -25,7 +37,3 @@
 - CRUD Tag
 - clicando em dowload na listagem de Tag, e retornado o relatorio
 ![Screenshot](tela01.png)
-
-
-# SQL
-- já que era permitido usar frameworks, foi usado export do sonataAdmin não sendo necessario sql puro.
